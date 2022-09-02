@@ -83,6 +83,7 @@ contract w4sted is Ownable, ERC20, ReentrancyGuard {
     function removeSong(uint256 _songSerial) public onlyOwner {
         songs[_songSerial] = songs[serial - 1];
         delete songs[serial - 1];
+        serial--;
     }
 
     /// @dev function to swap customer token SMS for eth from contract
